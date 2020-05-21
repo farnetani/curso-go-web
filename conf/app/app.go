@@ -65,12 +65,22 @@ func SetupMiddlewares(app *macaron.Macaron) {
 
 //SetupRoutes defines the routes the Web Application will respond
 func SetupRoutes(app *macaron.Macaron) {
+
 	app.Get("", auth.LoginRequired, handler.IndexCliente)
 	app.Get("/", auth.LoginRequired, handler.IndexCliente)
 	app.Get("/login", auth.IndexLogin)
 	app.Get("/logout", auth.LogoutForm)
 	app.Post("/checklogin", binding.Bind(auth.User{}), auth.CheckFormUserCredentials)
 	app.Post("/alteracliente", auth.LoginRequired, binding.Bind(model.Cliente{}), handler.AlteraCliente)
+
+	//Junior
+	app.Get("/clientes", handler.ListCliente)
+
+	app.Group("/gzip", func() {
+		app.Get("/clientes-com-gzip", handler.ListCliente)
+	}, gzip.Gziper(gzip.Options{ CompressionLevel: 1,}))
+
+	//Junior:end
 
 	//HealthChecker
 	app.Get("/health", handler.HealthCheck)

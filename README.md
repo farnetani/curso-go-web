@@ -32,6 +32,7 @@ https://github.com/novatrixtech/mercurius
 
 ```
 go get -v gihtub.com/novatritech/mercurius/...
+go get -v github.com/novatrixtech/mercurius/...
 ```
 
 Baixar o projeto FORKED no meu github
@@ -48,6 +49,11 @@ Mais info sobre go get: https://golang.org/pkg/cmd/go/internal/get/
 Abrir o projeto em `src/github.com/farnetani/curso-go-web` e iniciar o curso
 
 
+## Criando uma App com o mercurius do zero
 
+```
+mercurius new
+- app-do-zero-web (nome da aplicação)
 
+```
 

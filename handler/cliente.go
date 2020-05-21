@@ -10,6 +10,35 @@ import (
 	"github.com/jeffprestes/curso-go-web/repo"
 )
 
+func ListCliente(ctx *contx.Context) {
+	clientes, err := repo.GetClientes()
+
+	type Result struct {
+		Data []model.Cliente
+		Msg string
+	}
+	result := Result{
+		Data : clientes,
+		Msg : "ok",
+	}
+
+	if err != nil {
+		log.Println("retornaParaListaClientes - Error: ", err.Error())
+		ctx.NativeHTML(http.StatusInternalServerError, "erro")
+		return
+	}
+	ctx.JSON(200, result)
+
+	// ctx.Data["clientes"] = clientes
+	// ctx.Resp.WriteHeader (http.StatusOK)
+
+	// json.NewEncoder(ctx.Resp).Encode(clientes)
+	// ctx.Resp.Write([]byte("teste"))
+	// ctx.JSONWithoutEscape(200, clientes)
+	// ctx.JSON(201, clientes)
+	// ctx.XML(200, clientes)
+}
+
 //IndexCliente abre a pagina de gerenciamento de clientes
 func IndexCliente(ctx *contx.Context) {
 	clientes, err := repo.GetClientes()

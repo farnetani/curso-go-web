@@ -16,7 +16,7 @@ CREATE TABLE `logac_accesstokenacessos` (
   PRIMARY KEY (`logac_id`));
    
 
---Adicionar a tabela para armazenar os access token gerados quando e por quem
+-- Adicionar a tabela para armazenar os access token gerados quando e por quem
 
 CREATE TABLE `logacr_logaccesstokenrequest` (
   `logacr_id` INT NOT NULL AUTO_INCREMENT,
