@@ -23,3 +23,31 @@ Se estiver num servidor Linux e quiser iniciar a aplicação como um serviço, c
 Acesse em seu navegador http://localhost:8080
 
 Caso queira mudar a porta acesse o arquivo _conf/app.ini_ e mude a variável **http_port** ou ainda defina através da criação da variável de ambiente **PORT** com o valor desejado para a porta.
+
+## Documentação Farnetani
+
+Instalar o Mercurius
+
+https://github.com/novatrixtech/mercurius
+
+```
+go get -v gihtub.com/novatritech/mercurius/...
+```
+
+Baixar o projeto FORKED no meu github
+```
+go get -v -u github.com/farnetani/curso-go-web
+
+-v = verbose mode
+-u = para atualizar os pacotes (baixar as dependencias também)
+-t = para baixar também os packages requiridos para construção dos testes
+
+Mais info sobre go get: https://golang.org/pkg/cmd/go/internal/get/
+```
+
+Abrir o projeto em `src/github.com/farnetani/curso-go-web` e iniciar o curso
+
+
+
+
+
